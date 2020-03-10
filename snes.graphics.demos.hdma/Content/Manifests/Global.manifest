@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentManifest Name="Global">
+  <ContentGroup Name="Sprites" Directory="Sprites" Type="Ultraviolet.Graphics.Graphics2D.Sprite">
+    <Asset Name="Fire">Fire</Asset>
+	<Asset Name="RocketTown">RocketTown</Asset>
+	<Asset Name="Sephiroth">Sephiroth</Asset>
+  </ContentGroup>
+</ContentManifest>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<TextureAtlas>
+  <Metadata>
+
+  </Metadata>
+  <Images>
+    <Include>Sephiroth_*.png</Include>
+  </Images>
+</TextureAtlas>

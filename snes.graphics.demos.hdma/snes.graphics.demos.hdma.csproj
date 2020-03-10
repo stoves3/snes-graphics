@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CBDA68AF-F0D5-4652-9C9D-34749916C966}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>snes.graphics.demos.hdma</RootNamespace>
+    <AssemblyName>snes.graphics.demos.hdma</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.DotNet.PlatformAbstractions, Version=2.0.4.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.DotNet.PlatformAbstractions.2.0.4\lib\net45\Microsoft.DotNet.PlatformAbstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyModel, Version=2.0.4.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyModel.2.0.4\lib\net451\Microsoft.Extensions.DependencyModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Ultraviolet, Version=2020.2.0.0, Culture=neutral, PublicKeyToken=78da2f4877323311, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ultraviolet.2020.2.0.4055\lib\net461\Ultraviolet.dll</HintPath>
+    </Reference>
+    <Reference Include="Ultraviolet.BASS, Version=2020.2.0.0, Culture=neutral, PublicKeyToken=78da2f4877323311, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ultraviolet.BASS.2020.2.0.4055\lib\net461\Ultraviolet.BASS.dll</HintPath>
+    </Reference>
+    <Reference Include="Ultraviolet.Core, Version=2020.2.0.0, Culture=neutral, PublicKeyToken=78da2f4877323311, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ultraviolet.Core.2020.2.0.4055\lib\net461\Ultraviolet.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Ultraviolet.OpenGL, Version=2020.2.0.0, Culture=neutral, PublicKeyToken=78da2f4877323311, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ultraviolet.OpenGL.2020.2.0.4055\lib\net461\Ultraviolet.OpenGL.dll</HintPath>
+    </Reference>
+    <Reference Include="Ultraviolet.OpenGL.Bindings, Version=2020.2.0.0, Culture=neutral, PublicKeyToken=78da2f4877323311, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ultraviolet.OpenGL.Bindings.2020.2.0.4055\lib\net461\Ultraviolet.OpenGL.Bindings.dll</HintPath>
+    </Reference>
+    <Reference Include="Ultraviolet.SDL2, Version=2020.2.0.0, Culture=neutral, PublicKeyToken=78da2f4877323311, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ultraviolet.SDL2.2020.2.0.4055\lib\net461\Ultraviolet.SDL2.dll</HintPath>
+    </Reference>
+    <Reference Include="Ultraviolet.Shims.Desktop, Version=2020.2.0.0, Culture=neutral, PublicKeyToken=78da2f4877323311, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ultraviolet.Shims.Desktop.2020.2.0.4055\lib\net461\Ultraviolet.Shims.Desktop.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Assets\GlobalSpriteID.cs" />
+    <Compile Include="Game.cs" />
+    <Compile Include="Managers\InputManager.cs" />
+    <Compile Include="Objects\BaseObject.cs" />
+    <Compile Include="Objects\Fire.cs" />
+    <Compile Include="Objects\IObject.cs" />
+    <Compile Include="Objects\Sephiroth.cs" />
+    <Compile Include="Objects\Town.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <Content Include="Content\Manifests\Global.manifest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Sprites\Fire.sprite">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Sprites\RocketTown.sprite">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Sprites\Sephiroth.sprite">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\snes.graphics.demos.formulas\snes.graphics.demos.formulas.csproj">
+      <Project>{461fe024-dc9e-4640-856a-a3162f6517b4}</Project>
+      <Name>snes.graphics.demos.formulas</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Sprites\Textures\Fire.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Sprites\Textures\Fire_01.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Sprites\Textures\RocketTown.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Sprites\Textures\RocketTown_01.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Sprites\Textures\Sephiroth.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Sprites\Textures\Sephiroth_01.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Ultraviolet.BASS.Native.2020.2.0.4055\build\net461\Ultraviolet.BASS.Native.targets" Condition="Exists('..\packages\Ultraviolet.BASS.Native.2020.2.0.4055\build\net461\Ultraviolet.BASS.Native.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Ultraviolet.BASS.Native.2020.2.0.4055\build\net461\Ultraviolet.BASS.Native.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Ultraviolet.BASS.Native.2020.2.0.4055\build\net461\Ultraviolet.BASS.Native.targets'))" />
+    <Error Condition="!Exists('..\packages\Ultraviolet.SDL2.Native.2020.2.0.4055\build\net461\Ultraviolet.SDL2.Native.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Ultraviolet.SDL2.Native.2020.2.0.4055\build\net461\Ultraviolet.SDL2.Native.targets'))" />
+  </Target>
+  <Import Project="..\packages\Ultraviolet.SDL2.Native.2020.2.0.4055\build\net461\Ultraviolet.SDL2.Native.targets" Condition="Exists('..\packages\Ultraviolet.SDL2.Native.2020.2.0.4055\build\net461\Ultraviolet.SDL2.Native.targets')" />
+</Project>

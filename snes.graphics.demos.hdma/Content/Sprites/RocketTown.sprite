@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Sprite>
+  <Animations>
+    <Animation Name="RocketTown">
+      <Frames Atlas="Textures/RocketTown" Duration="0" OriginX="0" OriginY="0">
+        <Frame AtlasCell="RocketTown_01" />
+      </Frames>
+    </Animation>
+  </Animations>
+</Sprite>
