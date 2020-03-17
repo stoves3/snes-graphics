@@ -1,8 +1,7 @@
 using snes.graphics.demos.hdma.Assets;
-using snes.graphics.demos.formulas;
-using snes.graphics.demos.hdma.Objects;
-using System.Collections.Generic;
+using snes.graphics.demos.hdma.Managers;
 using System;
+using System.Linq;
 using Ultraviolet;
 using Ultraviolet.Content;
 using Ultraviolet.Core;
@@ -14,6 +13,10 @@ namespace snes.graphics.demos.hdma
 {
     public class Game : UltravioletApplication
     {
+        private ContentManager _content;
+        private SpriteBatch _spriteBatch;
+        private ScreenManager _screenManager;
+
         public Game() : base("stoves3", "Snes Graphics Demos HDMA") 
         { }
 
@@ -34,41 +37,37 @@ namespace snes.graphics.demos.hdma
             return new OpenGLUltravioletContext(this, configuration);
         }
 
+        private ObjectManager _objectManager;
+
         protected override void OnLoadingContent()
         {
-            content = ContentManager.Create("Content");
-            LoadContentManifests(content);
+            _content = ContentManager.Create("Content");
+            LoadContentManifests(_content);
 
-            var clientSize = Ultraviolet.GetUI().GetScreens().Window.ClientSize;
-            var screenSize = new Vector2d(clientSize.Width, clientSize.Height);
+            _screenManager = new ScreenManager(Ultraviolet);
+            _screenManager.UpdateWindow(_screenManager.Current.First());
 
-            var fire = new Fire(content.Load<Sprite>(GlobalSpriteID.Fire), "Fire", screenSize);
-            var town = new Town(content.Load<Sprite>(GlobalSpriteID.RocketTown), "RocketTown", screenSize);
-            var sephiroth = new Fire(content.Load<Sprite>(GlobalSpriteID.Sephiroth), "Sephiroth", screenSize);
+            _objectManager = new ObjectManager(_content, _screenManager);
 
-            objects.AddRange(new IObject[] { town, fire, sephiroth });
-
-            spriteBatch = SpriteBatch.Create();
+            _spriteBatch = SpriteBatch.Create();
 
             base.OnLoadingContent();
         }
-
-        private readonly List<IObject> objects = new List<IObject>();
-        
+                
         protected override void OnUpdating(UltravioletTime time)
         {
-            objects.ForEach(o => o.Update(time));
+            _objectManager.UpdateObjects(time);
 
             base.OnUpdating(time);
         }
         
         protected override void OnDrawing(UltravioletTime time)
         {
-            spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend);
+            _spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend);
 
-            objects.ForEach(o => o.Draw(spriteBatch));
+            _objectManager.DrawObjects(_spriteBatch);
 
-            spriteBatch.End();
+            _spriteBatch.End();
 
             base.OnDrawing(time);
         }
@@ -77,8 +76,8 @@ namespace snes.graphics.demos.hdma
         {
             if (disposing)
             {
-                SafeDispose.DisposeRef(ref spriteBatch);
-                SafeDispose.DisposeRef(ref content);
+                SafeDispose.DisposeRef(ref _spriteBatch);
+                SafeDispose.DisposeRef(ref _content);
             }
             base.Dispose(disposing);
         }
@@ -92,10 +91,7 @@ namespace snes.graphics.demos.hdma
             var contentManifestFiles = content.GetAssetFilePathsInDirectory("Manifests");
             uvContent.Manifests.Load(contentManifestFiles);
 
-            Ultraviolet.GetContent().Manifests["Global"]["Sprites"].PopulateAssetLibrary(typeof(GlobalSpriteID));
+            Ultraviolet.GetContent().Manifests["Global"]["Images"].PopulateAssetLibrary(typeof(GlobalImageID));
         }
-
-        private ContentManager content;
-        private SpriteBatch spriteBatch;
     }
 }

@@ -12,7 +12,7 @@ namespace snes.graphics.demos.hdma.Managers
         Exit
     }
 
-    internal class InputManager
+    public class InputManager
     {
         private readonly UltravioletContext _uv;
 
@@ -35,7 +35,7 @@ namespace snes.graphics.demos.hdma.Managers
         }
     }
 
-    internal static class InputExtensions
+    public static class InputExtensions
     {
         public static Actions GetActions(this IUltravioletInput input) => Actions.Instance;
 

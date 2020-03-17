@@ -75,19 +75,35 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\GlobalImageID.cs" />
     <Compile Include="Assets\GlobalSpriteID.cs" />
     <Compile Include="Game.cs" />
+    <Compile Include="Managers\ImageManager.cs" />
     <Compile Include="Managers\InputManager.cs" />
+    <Compile Include="Managers\ObjectManager.cs" />
+    <Compile Include="Managers\ScreenManager.cs" />
     <Compile Include="Objects\BaseObject.cs" />
     <Compile Include="Objects\Fire.cs" />
+    <Compile Include="Objects\Effect.cs" />
     <Compile Include="Objects\IObject.cs" />
+    <Compile Include="Objects\Screen.cs" />
     <Compile Include="Objects\Sephiroth.cs" />
     <Compile Include="Objects\Town.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\Scaler.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <Content Include="Content\Images\FireImg.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\RocketTownImg.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\SephirothImg.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\Manifests\Global.manifest">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -102,7 +118,6 @@
     </Content>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\snes.graphics.demos.formulas\snes.graphics.demos.formulas.csproj">
       <Project>{461fe024-dc9e-4640-856a-a3162f6517b4}</Project>

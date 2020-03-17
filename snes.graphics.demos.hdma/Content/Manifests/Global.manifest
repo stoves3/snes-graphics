@@ -2,7 +2,12 @@
 <ContentManifest Name="Global">
   <ContentGroup Name="Sprites" Directory="Sprites" Type="Ultraviolet.Graphics.Graphics2D.Sprite">
     <Asset Name="Fire">Fire</Asset>
-	<Asset Name="RocketTown">RocketTown</Asset>
-	<Asset Name="Sephiroth">Sephiroth</Asset>
+    <Asset Name="RocketTown">RocketTown</Asset>
+    <Asset Name="Sephiroth">Sephiroth</Asset>
+  </ContentGroup>
+  <ContentGroup Name="Images" Directory="Images" Type="Ultraviolet.Graphics.Texture2D">
+    <Asset Name="Fire">FireImg</Asset>
+    <Asset Name="RocketTown">RocketTownImg</Asset>
+    <Asset Name="Sephiroth">SephirothImg</Asset>
   </ContentGroup>
 </ContentManifest>
